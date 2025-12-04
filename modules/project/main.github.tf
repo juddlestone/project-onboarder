@@ -8,9 +8,9 @@ resource "github_repository" "this" {
 }
 
 resource "github_branch" "this" {
-  for_each   = var.environments
+  for_each   = { for k, v in var.environments : k => v if k != "prd" }
   repository = github_repository.this.name
-  branch     = each.key == "prd" ? "main" : each.key
+  branch     = each.key
 }
 
 resource "github_actions_secret" "this" {

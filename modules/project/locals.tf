@@ -10,9 +10,10 @@ locals {
     AZURE_TENANT_ID              = var.tenant_id
     BACKEND_RESOURCE_GROUP_NAME  = local.backend_resource_group_name
     BACKEND_STORAGE_ACCOUNT_NAME = local.backend_storage_account_name
+    BACKEND_KEY                  = "terraform.tfstate"
   }
 
-  # Merge common secrets with environment-specific client-id
+  # Merge common secrets with environment-specific client-id and storage container
   repository_secrets = merge(
     local.common_secrets,
     {
