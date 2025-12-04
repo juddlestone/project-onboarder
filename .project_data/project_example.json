@@ -8,7 +8,7 @@
         "branch_name": "main"
     }
   },
-  "repository_visibility": true,
+  "repository_visibility": "private",
   "budget_amount": 10,
   "location": "uksouth",
   "naming_suffix": ["example", "app"],
