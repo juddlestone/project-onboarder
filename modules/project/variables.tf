@@ -35,6 +35,16 @@ variable "repository_visibility" {
   type        = string
 }
 
+variable "repository_description" {
+  description = "The description of the GitHub repository."
+  type        = string
+}
+
+variable "repository_gitignore_template" {
+  description = "The gitignore template to use for the GitHub repository."
+  type        = string
+}
+
 variable "subscription_id" {
   description = "The Azure subscription ID in which resources will be created."
   type        = string
