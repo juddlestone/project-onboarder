@@ -32,7 +32,7 @@ variable "repository_name" {
 
 variable "repository_visibility" {
   description = "Whether the GitHub repository is private."
-  type        = bool
+  type        = string
 }
 
 variable "subscription_id" {
