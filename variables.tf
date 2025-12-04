@@ -12,3 +12,9 @@ variable "management_subscription_id" {
   description = "The subscription used for management operations."
   type        = string
 }
+
+variable "github_token" {
+  # Got to use a token for now as authenticating as an app within a 'personal' github account does not seem to be supported
+  description = "The GitHub token used to authenticate with the GitHub provider."
+  type        = string
+}

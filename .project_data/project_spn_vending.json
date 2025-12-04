@@ -1,0 +1,16 @@
+{
+  "repository_name": "entra-spn-vending",
+  "environments": {
+    "prd": {
+        "branch_name": "main"
+    }
+  },
+  "repository_visibility": "private",
+  "budget_amount": 5,
+  "location": "uksouth",
+  "naming_suffix": ["entra", "spn", "vending"],
+  "tags": {
+    "ManagedBy": "Terraform",
+    "Project": "entra-spn-vending"
+  }
+}

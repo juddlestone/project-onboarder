@@ -31,4 +31,5 @@ provider "azurerm" {
 }
 
 provider "github" {
+  token = var.github_token
 }
