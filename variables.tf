@@ -7,3 +7,8 @@ variable "production_subscription_id" {
   description = "The subscription where the resources will be deployed."
   type        = string
 }
+
+variable "management_subscription_id" {
+  description = "The subscription used for management operations."
+  type        = string
+}
