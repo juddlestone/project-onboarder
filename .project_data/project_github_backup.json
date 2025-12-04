@@ -1,0 +1,18 @@
+{
+  "budget_amount": 5,
+  "environments": {
+    "prd": {
+        "branch_name": "main"
+    }
+  },
+  "location": "uksouth",
+  "naming_suffix": ["github", "backup"],
+  "repository_description": "This repository contains infrastructure and application code which I use to backup my GitHub repositories.",
+  "repository_gitignore_template": "Terraform",
+  "repository_name": "github-backup",
+  "repository_visibility": "private",
+  "tags": {
+    "ManagedBy": "Terraform",
+    "Project": "github-backup"
+  }
+}
