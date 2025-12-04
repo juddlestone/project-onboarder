@@ -9,7 +9,6 @@ resource "time_static" "this" {
 }
 
 resource "azurerm_storage_container" "this" {
-  provider              = azurerm.management
   for_each              = var.environments
   name                  = "${var.repository_name}-${each.key}"
   storage_account_id    = var.backend_storage_account_id
@@ -17,6 +16,7 @@ resource "azurerm_storage_container" "this" {
 }
 
 resource "azurerm_resource_group" "this" {
+  provider = azurerm.production
   for_each = var.environments
   name     = module.naming[each.key].resource_group.name
   location = var.location
@@ -24,6 +24,7 @@ resource "azurerm_resource_group" "this" {
 }
 
 resource "azurerm_consumption_budget_resource_group" "this" {
+  provider          = azurerm.production
   for_each          = var.environments
   name              = "budget-${var.budget_amount}-${each.key}"
   resource_group_id = azurerm_resource_group.this[each.key].id
@@ -45,6 +46,7 @@ resource "azurerm_consumption_budget_resource_group" "this" {
 }
 
 resource "azurerm_user_assigned_identity" "this" {
+  provider            = azurerm.production
   for_each            = var.environments
   name                = module.naming[each.key].user_assigned_identity.name
   resource_group_name = azurerm_resource_group.this[each.key].name
@@ -53,6 +55,7 @@ resource "azurerm_user_assigned_identity" "this" {
 }
 
 resource "azurerm_federated_identity_credential" "this" {
+  provider            = azurerm.production
   for_each            = var.environments
   name                = "fic-${module.naming[each.key].user_assigned_identity.name}"
   resource_group_name = azurerm_resource_group.this[each.key].name
@@ -63,6 +66,7 @@ resource "azurerm_federated_identity_credential" "this" {
 }
 
 resource "azurerm_role_assignment" "owner" {
+  provider             = azurerm.production
   for_each             = var.environments
   scope                = azurerm_resource_group.this[each.key].id
   role_definition_name = "Owner"
@@ -70,7 +74,6 @@ resource "azurerm_role_assignment" "owner" {
 }
 
 resource "azurerm_role_assignment" "storage_blob_data_contributor" {
-  provider             = azurerm.management
   for_each             = var.environments
   scope                = azurerm_storage_container.this[each.key].id
   role_definition_name = "Storage Blob Data Contributor"

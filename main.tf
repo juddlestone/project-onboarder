@@ -5,7 +5,7 @@ module "project" {
   for_each = local.projects
 
   providers = {
-    azurerm.management = azurerm.management
+    azurerm.production = azurerm.production
   }
 
   backend_storage_account_id = var.backend_storage_account_id
@@ -15,7 +15,7 @@ module "project" {
   naming_suffix              = each.value.naming_suffix
   repository_name            = each.value.repository_name
   repository_visibility      = each.value.repository_visibility
-  subscription_id            = data.azurerm_client_config.current.subscription_id
+  subscription_id            = var.production_subscription_id
   tenant_id                  = data.azurerm_client_config.current.tenant_id
 
   tags = merge(local.common_tags, each.value.tags)

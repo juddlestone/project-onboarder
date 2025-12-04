@@ -19,8 +19,8 @@ provider "azurerm" {
 }
 
 provider "azurerm" {
-  alias           = "management"
-  subscription_id = var.management_subscription_id
+  alias           = "production"
+  subscription_id = var.production_subscription_id
   features {}
 }
 
