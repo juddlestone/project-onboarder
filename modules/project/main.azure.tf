@@ -31,7 +31,7 @@ resource "azurerm_consumption_budget_resource_group" "this" {
   amount            = var.budget_amount
 
   time_period {
-    start_date = formatdate("YYYY-MM-'01T00:00:00Z'", time_static.this.rfc3339)
+    start_date = formatdate("YYYY-MM-'01T00:00:00Z'", time_static.this[each.key].rfc3339)
   }
 
   notification {

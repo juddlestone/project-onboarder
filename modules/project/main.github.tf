@@ -9,7 +9,7 @@ resource "github_branch" "this" {
   branch     = each.key
 }
 
-resource "github_repository_secret" "this" {
+resource "github_actions_secret" "this" {
   for_each        = local.repository_secrets
   repository      = github_repository.this.name
   secret_name     = each.key
