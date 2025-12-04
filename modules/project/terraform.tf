@@ -1,0 +1,19 @@
+terraform {
+  backend "azurerm" {}
+
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "~> 4.54"
+
+      configuration_aliases = [
+        azurerm.management
+      ]
+    }
+
+    github = {
+      source  = "integrations/github"
+      version = "~> 6.8"
+    }
+  }
+}
