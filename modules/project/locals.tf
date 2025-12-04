@@ -12,16 +12,12 @@ locals {
     ARM_BACKEND_STORAGE_ACCOUNT_NAME = local.backend_storage_account_name
   }
 
-  # Merge common secrets with environment-specific secrets
-  repository_secrets = merge([
-    for env_key in keys(var.environments) : merge(
-      {
-        for secret_key, secret_value in local.common_secrets :
-        "${secret_key}_${upper(env_key)}" => secret_value
-      },
-      {
-        "ARM_CLIENT_ID_${upper(env_key)}" = azurerm_user_assigned_identity.this[env_key].client_id
-      }
-    )
-  ]...)
+  # Merge common secrets with environment-specific client-id
+  repository_secrets = merge(
+    local.common_secrets,
+    {
+      for env_key in keys(var.environments) :
+      "ARM_CLIENT_ID_${upper(env_key)}" => azurerm_user_assigned_identity.this[env_key].client_id
+    }
+  )
 }
