@@ -6,10 +6,10 @@ locals {
 
   # Common secrets shared across all environments
   common_secrets = {
-    ARM_SUBSCRIPTION_ID              = var.subscription_id
-    ARM_TENANT_ID                    = var.tenant_id
-    ARM_BACKEND_RESOURCE_GROUP_NAME  = local.backend_resource_group_name
-    ARM_BACKEND_STORAGE_ACCOUNT_NAME = local.backend_storage_account_name
+    AZURE_SUBSCRIPTION_ID        = var.subscription_id
+    AZURE_TENANT_ID              = var.tenant_id
+    BACKEND_RESOURCE_GROUP_NAME  = local.backend_resource_group_name
+    BACKEND_STORAGE_ACCOUNT_NAME = local.backend_storage_account_name
   }
 
   # Merge common secrets with environment-specific client-id
@@ -17,7 +17,11 @@ locals {
     local.common_secrets,
     {
       for env_key in keys(var.environments) :
-      "ARM_CLIENT_ID_${upper(env_key)}" => azurerm_user_assigned_identity.this[env_key].client_id
+      "AZURE_CLIENT_ID_${upper(env_key)}" => azurerm_user_assigned_identity.this[env_key].client_id
+    },
+    {
+      for env_key in keys(var.environments) :
+      "BACKEND_CONTAINER_NAME_${upper(env_key)}" => "${var.repository_name}-${env_key}"
     }
   )
 }
