@@ -11,5 +11,5 @@ This repository captures my project requirements in a `json` data format, then c
 - User Assigned Managed Identity w/ Workload Identity Federation (For each environment)
 
 <div align="center">
-<img src="/static/overview.png" alt="A overview of the solution and what it deploys" width="400">
+<img src="/static/overview.png" alt="A overview of the solution and what it deploys" width="500">
 </div>
