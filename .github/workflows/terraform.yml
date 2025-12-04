@@ -1,0 +1,65 @@
+name: Deploy Infrastructure
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.project_data/**'
+      - '**/*.tf'
+
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+  pull-requests: write
+
+jobs:
+  plan:
+    name: Terraform Plan
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Terraform | Setup
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: latest
+
+      - name: Azure Login via OIDC
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Terraform | Init
+        run: |
+          terraform init \
+            -backend-config="resource_group_name=${{ secrets.BACKEND_RESOURCE_GROUP_NAME }}" \
+            -backend-config="storage_account_name=${{ secrets.BACKEND_STORAGE_ACCOUNT_NAME }}" \
+            -backend-config="container_name=${{ secrets.BACKEND_CONTAINER_NAME }}" \
+            -backend-config="key=${{ secrets.BACKEND_KEY }}"
+
+      - name: Terraform | Validate
+        run: terraform validate
+
+      - name: Terraform | Format Check
+        run: terraform fmt -check -recursive
+
+      - name: Terraform | Plan
+        run: |
+          terraform plan -out=tfplan
+        env:
+          TF_VAR_backend_storage_account_id: ${{ secrets.BACKEND_STORAGE_ACCOUNT_ID }}
+          TF_VAR_management_subscription_id: ${{ secrets.MANAGEMENT_SUBSCRIPTION_ID }}
+
+      - name: Upload Plan
+        uses: actions/upload-artifact@v5
+        with:
+          name: tfplan
+          path: tfplan
+          retention-days: 1

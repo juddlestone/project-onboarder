@@ -1,0 +1,20 @@
+{
+  "repository_name": "example-app",
+  "environments": {
+    "dev": {
+        "branch_name": "develop"
+    },
+    "prd": {
+        "branch_name": "main"
+    }
+  },
+  "repository_visibility": true,
+  "budget_amount": 10,
+  "location": "uksouth",
+  "naming_suffix": ["example", "app"],
+  "tags": {
+    "Environment": "Multi",
+    "ManagedBy": "Terraform",
+    "Project": "example-app"
+  }
+}
