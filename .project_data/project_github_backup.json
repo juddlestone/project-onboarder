@@ -11,6 +11,7 @@
   "repository_gitignore_template": "Terraform",
   "repository_name": "github-backup",
   "repository_visibility": "private",
+  "repository_topics": ["backup", "github", "automation"],
   "tags": {
     "ManagedBy": "Terraform",
     "Project": "github-backup"

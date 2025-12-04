@@ -16,6 +16,7 @@ module "project" {
   repository_description        = each.value.repository_description
   repository_gitignore_template = each.value.repository_gitignore_template
   repository_name               = each.value.repository_name
+  repository_topics             = each.value.repository_topics
   repository_visibility         = each.value.repository_visibility
   subscription_id               = var.production_subscription_id
   tenant_id                     = data.azurerm_client_config.current.tenant_id

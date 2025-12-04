@@ -45,6 +45,11 @@ variable "repository_gitignore_template" {
   type        = string
 }
 
+variable "repository_topics" {
+  description = "A list of topics to assign to the GitHub repository."
+  type        = list(string)
+}
+
 variable "subscription_id" {
   description = "The Azure subscription ID in which resources will be created."
   type        = string
