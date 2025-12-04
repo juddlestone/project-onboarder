@@ -1,14 +1,16 @@
 {
-  "repository_name": "entra-spn-vending",
+  "budget_amount": 5,
   "environments": {
     "prd": {
         "branch_name": "main"
     }
   },
-  "repository_visibility": "private",
-  "budget_amount": 5,
   "location": "uksouth",
   "naming_suffix": ["entra", "spn", "vending"],
+  "repository_description": "This repository contains code for the Entra SPN Vending project.",
+  "repository_gitignore_template": "Terraform",
+  "repository_name": "entra-spn-vending",
+  "repository_visibility": "private",
   "tags": {
     "ManagedBy": "Terraform",
     "Project": "entra-spn-vending"
