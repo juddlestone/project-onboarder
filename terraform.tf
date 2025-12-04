@@ -15,12 +15,14 @@ terraform {
 }
 
 provider "azurerm" {
+  storage_use_azuread = true
   features {}
 }
 
 provider "azurerm" {
-  alias           = "production"
-  subscription_id = var.production_subscription_id
+  alias               = "production"
+  subscription_id     = var.production_subscription_id
+  storage_use_azuread = true
   features {}
 }
 
