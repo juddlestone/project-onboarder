@@ -3,6 +3,7 @@ resource "github_repository" "this" {
   visibility         = var.repository_visibility
   description        = var.repository_description
   gitignore_template = var.repository_gitignore_template
+  topics             = var.repository_topics
   auto_init          = true
 }
 

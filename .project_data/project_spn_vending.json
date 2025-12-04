@@ -11,6 +11,7 @@
   "repository_gitignore_template": "Terraform",
   "repository_name": "entra-spn-vending",
   "repository_visibility": "private",
+  "repository_topics": ["platform", "automation"],
   "tags": {
     "ManagedBy": "Terraform",
     "Project": "entra-spn-vending"
