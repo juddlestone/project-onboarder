@@ -10,7 +10,9 @@ variable "budget_amount" {
 
 variable "environments" {
   description = "A map of environments to create branches for."
-  type        = map(string)
+  type = map(object({
+    branch_name = string
+  }))
 }
 
 variable "location" {
