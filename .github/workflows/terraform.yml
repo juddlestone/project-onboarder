@@ -42,10 +42,7 @@ jobs:
             -backend-config="resource_group_name=${{ secrets.BACKEND_RESOURCE_GROUP_NAME }}" \
             -backend-config="storage_account_name=${{ secrets.BACKEND_STORAGE_ACCOUNT_NAME }}" \
             -backend-config="container_name=${{ secrets.BACKEND_CONTAINER_NAME }}" \
-            -backend-config="key=${{ secrets.BACKEND_KEY }}" 
-        env:
-          ARM_USE_AZUREAD: "true"
-          ARM_USE_OIDC: "true"
+            -backend-config="key=${{ secrets.BACKEND_KEY }}"
 
       - name: Terraform | Validate
         run: terraform validate
