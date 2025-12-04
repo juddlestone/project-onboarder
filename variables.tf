@@ -3,7 +3,7 @@ variable "backend_storage_account_id" {
   type        = string
 }
 
-variable "management_subscription_id" {
-  description = "The Azure management subscription ID for role assignments."
+variable "production_subscription_id" {
+  description = "The subscription where the resources will be deployed."
   type        = string
 }

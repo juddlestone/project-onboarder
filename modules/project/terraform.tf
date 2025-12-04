@@ -7,7 +7,7 @@ terraform {
       version = "~> 4.54"
 
       configuration_aliases = [
-        azurerm.management
+        azurerm.production
       ]
     }
 
