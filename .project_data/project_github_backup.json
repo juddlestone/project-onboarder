@@ -10,10 +10,11 @@
   "repository_description": "This repository contains infrastructure and application code which I use to backup my GitHub repositories.",
   "repository_gitignore_template": "Terraform",
   "repository_name": "github-backup",
-  "repository_visibility": "private",
+  "repository_visibility": "public",
   "repository_topics": ["backup", "github", "automation"],
   "tags": {
     "ManagedBy": "Terraform",
-    "Project": "github-backup"
+    "ServiceName": "github-backup",
+    "ServiceOwner": "jack@itsjack.cloud"
   }
 }
