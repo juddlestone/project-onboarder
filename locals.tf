@@ -1,7 +1,7 @@
 locals {
   common_tags = {
-    Created-Date = "${time_static.main.year}/${time_static.main.month}/${time_static.main.day}"
-    Created-By   = "Project Onboarder"
+    CreatedDate = "${time_static.main.year}/${time_static.main.month}/${time_static.main.day}"
+    CreatedBy   = "Project Onboarder"
   }
 
   project_data_dir = "${path.root}/.project_data"
