@@ -1,0 +1,20 @@
+{
+  "budget_amount": 5,
+  "environments": {
+    "prd": {
+        "branch_name": "main"
+    }
+  },
+  "location": "uksouth",
+  "naming_suffix": ["shared", "services"],
+  "repository_description": "This repository contains the infrastructure for resources which is used across various applications in my tenant.",
+  "repository_gitignore_template": "Terraform",
+  "repository_name": "shared-services",
+  "repository_visibility": "private",
+  "repository_topics": ["platform", "automation"],
+  "tags": {
+    "ManagedBy": "Terraform",
+    "ServiceName": "shared-services",
+    "ServiceOwner": "jack@itsjack.cloud"
+  }
+}
