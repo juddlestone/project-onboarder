@@ -14,6 +14,7 @@
   "repository_topics": ["platform", "automation"],
   "tags": {
     "ManagedBy": "Terraform",
-    "Project": "entra-spn-vending"
+    "ServiceName": "entra-spn-vending",
+    "ServiceOwner": "jack@itsjack.cloud"
   }
 }
