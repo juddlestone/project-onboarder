@@ -1,0 +1,20 @@
+{
+  "budget_amount": 5,
+  "environments": {
+    "prd": {
+        "branch_name": "main"
+    }
+  },
+  "location": "uksouth",
+  "naming_suffix": ["studying", "fastapi"],
+  "repository_description": "This repository contains infrastructure and application code which I use to study FastAPI and related technologies.",
+  "repository_gitignore_template": "Terraform",
+  "repository_name": "studying-fastapi",
+  "repository_visibility": "private",
+  "repository_topics": ["studying", "fastapi", "python"],
+  "tags": {
+    "ManagedBy": "Terraform",
+    "ServiceName": "studying-fastapi",
+    "ServiceOwner": "jack@itsjack.cloud"
+  }
+}
