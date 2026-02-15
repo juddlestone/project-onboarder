@@ -1,0 +1,20 @@
+{
+  "budget_amount": 5,
+  "environments": {
+    "prd": {
+        "branch_name": "main"
+    }
+  },
+  "location": "uksouth",
+  "naming_suffix": ["accountability"],
+  "repository_description": "This repository contains the application code which I use to build my habit tracker, accountability.",
+  "repository_gitignore_template": "Python",
+  "repository_name": "accountability",
+  "repository_visibility": "public",
+  "repository_topics": ["ai", "python", "automation"],
+  "tags": {
+    "ManagedBy": "Terraform",
+    "ServiceName": "accountability-app",
+    "ServiceOwner": "jack@itsjack.cloud"
+  }
+}
