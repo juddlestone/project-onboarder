@@ -1,0 +1,20 @@
+{
+  "budget_amount": 5,
+  "environments": {
+    "prd": {
+        "branch_name": "main"
+    }
+  },
+  "location": "uksouth",
+  "naming_suffix": ["testing", "customer", "api],
+  "repository_description": "Testing customer api",
+  "repository_gitignore_template": "Terraform",
+  "repository_name": "customer-api-testing",
+  "repository_visibility": "private",
+  "repository_topics": ["automation"],
+  "tags": {
+    "ManagedBy": "Terraform",
+    "ServiceName": "customer-api-testing",
+    "ServiceOwner": "jack@itsjack.cloud"
+  }
+}
