@@ -6,7 +6,7 @@
     }
   },
   "location": "uksouth",
-  "naming_suffix": ["testing", "customer", "api],
+  "naming_suffix": ["testing", "customer", "api"],
   "repository_description": "Testing customer api",
   "repository_gitignore_template": "Terraform",
   "repository_name": "customer-api-testing",
