@@ -10,7 +10,7 @@
   "repository_description": "This repository contains the application code which I use to build my habit tracker, accountability.",
   "repository_gitignore_template": "Python",
   "repository_name": "accountability",
-  "repository_visibility": "public",
+  "repository_visibility": "private",
   "repository_topics": ["ai", "python", "automation"],
   "tags": {
     "ManagedBy": "Terraform",
