@@ -1,0 +1,20 @@
+{
+  "budget_amount": 5,
+  "environments": {
+    "prd": {
+        "branch_name": "main"
+    }
+  },
+  "location": "uksouth",
+  "naming_suffix": ["hello"],
+  "repository_description": "This repository contains the application code which I use to build my online landing page, hello.itsjack.cloud.",
+  "repository_gitignore_template": "Terraform",
+  "repository_name": "hello-itsjack-cloud",
+  "repository_visibility": "private",
+  "repository_topics": ["cv", "profile"],
+  "tags": {
+    "ManagedBy": "Terraform",
+    "ServiceName": "hello-itsjack-cloud",
+    "ServiceOwner": "jack@itsjack.cloud"
+  }
+}
