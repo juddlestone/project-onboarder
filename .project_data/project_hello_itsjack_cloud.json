@@ -6,7 +6,7 @@
     }
   },
   "location": "uksouth",
-  "naming_suffix": ["hello"],
+  "naming_suffix": ["hello", "itsjack", "cloud"],
   "repository_description": "This repository contains the application code which I use to build my online landing page, hello.itsjack.cloud.",
   "repository_gitignore_template": "Terraform",
   "repository_name": "hello-itsjack-cloud",
