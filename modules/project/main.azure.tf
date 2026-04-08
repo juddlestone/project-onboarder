@@ -55,14 +55,13 @@ resource "azurerm_user_assigned_identity" "this" {
 }
 
 resource "azurerm_federated_identity_credential" "this" {
-  provider            = azurerm.production
-  for_each            = var.environments
-  name                = "fic-${module.naming[each.key].user_assigned_identity.name}"
-  resource_group_name = azurerm_resource_group.this[each.key].name
-  audience            = ["api://AzureADTokenExchange"]
-  issuer              = "https://token.actions.githubusercontent.com"
-  parent_id           = azurerm_user_assigned_identity.this[each.key].id
-  subject             = "repo:juddlestone/${github_repository.this.name}:ref:refs/heads/${each.key == "prd" ? "main" : each.key}"
+  provider                  = azurerm.production
+  for_each                  = var.environments
+  name                      = "fic-${module.naming[each.key].user_assigned_identity.name}"
+  user_assigned_identity_id = azurerm_user_assigned_identity.this[each.key].id
+  audience                  = ["api://AzureADTokenExchange"]
+  issuer                    = "https://token.actions.githubusercontent.com"
+  subject                   = "repo:juddlestone/${github_repository.this.name}:ref:refs/heads/${each.key == "prd" ? "main" : each.key}"
 }
 
 resource "azurerm_role_assignment" "owner" {
