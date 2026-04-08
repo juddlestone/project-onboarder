@@ -4,9 +4,7 @@ module "naming" {
   suffix   = concat(var.naming_suffix, [each.key])
 }
 
-resource "time_static" "this" {
-  for_each = var.environments
-}
+resource "time_static" "this" {}
 
 resource "azurerm_storage_container" "this" {
   for_each              = var.environments
@@ -31,7 +29,7 @@ resource "azurerm_consumption_budget_resource_group" "this" {
   amount            = var.budget_amount
 
   time_period {
-    start_date = formatdate("YYYY-MM-'01T00:00:00Z'", time_static.this[each.key].rfc3339)
+    start_date = formatdate("YYYY-MM-'01T00:00:00Z'", time_static.this.rfc3339)
   }
 
   notification {
