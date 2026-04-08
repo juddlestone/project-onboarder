@@ -13,6 +13,15 @@ locals {
     BACKEND_KEY                  = "terraform.tfstate"
   }
 
+  project_tags = {
+    Created-Date = "${time_static.main.year}/${time_static.main.month}/${time_static.main.day}"
+  }
+
+  tags = merge(
+    var.tags,
+    local.project_tags
+  )
+
   # Merge common secrets with environment-specific client-id and storage container
   repository_secrets = merge(
     local.common_secrets,

@@ -20,7 +20,7 @@ resource "azurerm_resource_group" "this" {
   for_each = var.environments
   name     = module.naming[each.key].resource_group.name
   location = var.location
-  tags     = var.tags
+  tags     = local.tags
 }
 
 resource "azurerm_consumption_budget_resource_group" "this" {
@@ -51,7 +51,7 @@ resource "azurerm_user_assigned_identity" "this" {
   name                = module.naming[each.key].user_assigned_identity.name
   resource_group_name = azurerm_resource_group.this[each.key].name
   location            = azurerm_resource_group.this[each.key].location
-  tags                = var.tags
+  tags                = local.tags
 }
 
 resource "azurerm_federated_identity_credential" "this" {
