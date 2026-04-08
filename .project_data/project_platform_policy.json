@@ -1,0 +1,20 @@
+{
+  "budget_amount": 5,
+  "environments": {
+    "prd": {
+        "branch_name": "main"
+    }
+  },
+  "location": "uksouth",
+  "naming_suffix": ["policy", "services"],
+  "repository_description": "This repository contains code which defines the policies which are applied my tenant.",
+  "repository_gitignore_template": "Terraform",
+  "repository_name": "platform-policy",
+  "repository_visibility": "private",
+  "repository_topics": ["platform", "automation", "policy"],
+  "tags": {
+    "ManagedBy": "Terraform",
+    "ServiceName": "platform-policy",
+    "ServiceOwner": "jack@itsjack.cloud"
+  }
+}
