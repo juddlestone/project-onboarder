@@ -14,7 +14,7 @@ locals {
   }
 
   project_tags = {
-    Created-Date = format(
+    CreatedDate = format(
       "%02d/%02d/%04d",
       time_static.this.day,
       time_static.this.month,
