@@ -14,7 +14,7 @@ locals {
   }
 
   project_tags = {
-    Created-Date = "${time_static.this.year}/${time_static.this.month}/${time_static.this.day}"
+    Created-Date = "${time_static.this[each.key].year}/${time_static.this[each.key].month}/${time_static.this[each.key].day}"
   }
 
   tags = merge(
