@@ -1,5 +1,3 @@
-resource "time_static" "main" {}
-
 module "project" {
   source   = "./modules/project"
   for_each = local.projects
