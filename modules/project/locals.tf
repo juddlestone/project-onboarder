@@ -14,7 +14,12 @@ locals {
   }
 
   project_tags = {
-    Created-Date = "${time_static.this.year}/${time_static.this.month}/${time_static.this.day}"
+    Created-Date = format(
+      "%02d/%02d/%04d",
+      time_static.this.day,
+      time_static.this.month,
+      time_static.this.year,
+    )
   }
 
   tags = merge(
