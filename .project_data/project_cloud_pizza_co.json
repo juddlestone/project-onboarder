@@ -1,0 +1,20 @@
+{
+  "budget_amount": 5,
+  "environments": {
+    "prd": {
+        "branch_name": "main"
+    }
+  },
+  "location": "uksouth",
+  "naming_suffix": ["cpc"],
+  "repository_description": "This repository contains the application and infrastructure code which I use to build the fictional 'Cloud Pizza Co' to demonstrate my skills.",
+  "repository_gitignore_template": "Python",
+  "repository_name": "cloud-pizza-co",
+  "repository_visibility": "private",
+  "repository_topics": ["study", "python", "demonstration"],
+  "tags": {
+    "ManagedBy": "Terraform",
+    "ServiceName": "cloud-pizza-co",
+    "ServiceOwner": "jack@itsjack.cloud"
+  }
+}
