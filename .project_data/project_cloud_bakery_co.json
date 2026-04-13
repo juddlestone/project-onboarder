@@ -1,0 +1,20 @@
+{
+  "budget_amount": 5,
+  "environments": {
+    "prd": {
+        "branch_name": "main"
+    }
+  },
+  "location": "uksouth",
+  "naming_suffix": ["cbc"],
+  "repository_description": "This repository contains the application code for the fictional company, 'Cloud Bakery Co'",
+  "repository_gitignore_template": "Python",
+  "repository_name": "cloud-bakery-co",
+  "repository_visibility": "private",
+  "repository_topics": ["study", "python", "demonstration"],
+  "tags": {
+    "ManagedBy": "Terraform",
+    "ServiceName": "cloud-bakery-co",
+    "ServiceOwner": "jack@itsjack.cloud"
+  }
+}
